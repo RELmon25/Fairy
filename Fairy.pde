@@ -43,7 +43,8 @@ class Fairy{
     //chispas
     for(int i = 0; i < sparks.size(); i++){
       Spark s = sparks.get(i);
-      s.display();
+      if(s.isDead()) sparks.remove(i);
+      else s.display();
     }
   }
   
@@ -54,9 +55,5 @@ class Fairy{
   void run(){
     step();
     display();
-    for(int i = 0; i < sparks.size(); i++){
-      Spark s = sparks.get(i);
-      if(s.isDead()) sparks.remove(i);
-    }
   }
 }
